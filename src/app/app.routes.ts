@@ -1,17 +1,38 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
   {
     path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+    loadComponent: () =>
+      import('./home/home.page').then((m) => m.HomePage),
+    children: [
+      {
+        path: 'consejo',
+        loadComponent: () =>
+          import('./home/consejo/consejo.page')
+            .then((m) => m.ConsejoPage),
+      },
+      {
+        path: 'ayuda',
+        loadComponent: () =>
+          import('./home/ayuda/ayuda.page')
+            .then((m) => m.AyudaPage),
+      },
+    ],
   },
   {
     path: 'acerca',
-    loadComponent: () => import('./acerca/acerca.page').then((m) => m.AcercaPage),
+    loadComponent: () =>
+      import('./acerca/acerca.page').then((m) => m.AcercaPage),
   },
   {
     path: 'contacto',
-    loadComponent: () => import('./contacto/contacto.page').then( m => m.ContactoPage)
+    loadComponent: () =>
+      import('./contacto/contacto.page').then((m) => m.ContactoPage),
   },
 ];

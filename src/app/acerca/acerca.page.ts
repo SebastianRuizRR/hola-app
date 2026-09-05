@@ -1,29 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
   IonContent,
-  IonButtons,
-  IonBackButton,
   IonButton,
-
 } from '@ionic/angular';
+import { EncabezadoComponent } from '../encabezado/encabezado.component';
 
 @Component({
   selector: 'app-acerca',
   templateUrl: './acerca.page.html',
   styleUrls: ['./acerca.page.scss'],
   imports: [
-    IonHeader,
-    IonToolbar,
-    IonTitle,
     IonContent,
-    IonButtons,
-    IonBackButton,
     IonButton,
     RouterLink,
+    EncabezadoComponent,
   ],
 })
 export class AcercaPage {}
