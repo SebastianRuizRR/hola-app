@@ -29,9 +29,10 @@ import {
 })
 export class HomePage {
   nombre = ''; // se conecta con el input
+  ciudad = '';
   saludo = ''; // lo que mostramos al apretar el botón
 
   saludar() {
-    this.saludo = this.nombre ? `¡Hola, ${this.nombre}!` : '¿Cómo te llamas?';
+    this.saludo = `¡Hola, ${this.nombre.trim()} de ${this.ciudad.trim()}!`;
   }
 }

@@ -14,7 +14,16 @@
     ></ion-input>
   </ion-item>
 
-  <ion-button expand="block" (click)="saludar()">Saludar</ion-button>
+  <ion-item>
+    <ion-input
+      label="Tu ciudad"
+      labelPlacement="floating"
+      placeholder="Escribe tu ciudad"
+      [(ngModel)]="ciudad"
+    ></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" [disabled]="!nombre.trim() || !ciudad.trim()" (click)="saludar()">Saludar</ion-button>
 
   @if (saludo) {
     <h1 class="ion-text-center">{{ saludo }}</h1>
